@@ -3,17 +3,26 @@
 ''' Enumerate prime numbers upto 10000 '''
 
 import time
+import sys
 
+argvs = sys.argv
+if len(argvs) < 2:
+    MAX = 10000
+else:
+    try:
+        MAX = int(argvs[1])
+    except:
+        MAX = 10000
 
 def sqrt(num):
     sq = num ** .5
     return sq
 
 def main():
-    maxn = 100000
-    prime_set = set(xrange(2,maxn+1))
-    temp_set = set()
-    possible_set = set(xrange(2,int(sqrt(maxn+1))))
+    # maxn = 100000
+    prime_set = set(xrange(2,MAX+1))
+    possible_set = set(xrange(2,int(sqrt(MAX+1))))
+    temp_set = set() # append prime upto sqrt(MAX)
     while 1:
         try:
             prime = sorted(possible_set).pop(0)

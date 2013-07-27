@@ -3,7 +3,7 @@ def prime3():
     counter = 0
     primes = [2, 3]
 
-    for n in range(5, 15001, 2):
+    for n in range(5, 100001, 2):
         isprime = True
         for i in range(1, len(primes)):
             counter += 1
