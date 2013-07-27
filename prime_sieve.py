@@ -10,13 +10,13 @@ def sqrt(num):
     return sq
 
 def main():
-    maxn = 10000
+    maxn = 100000
     prime_set = set(xrange(2,maxn+1))
     temp_set = set()
     possible_set = set(xrange(2,int(sqrt(maxn+1))))
     while 1:
         try:
-            prime = possible_set.pop()
+            prime = sorted(possible_set).pop(0)
             temp_set.add(prime)
         except:
             prime_set = sorted(prime_set | temp_set)
