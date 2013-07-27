@@ -17,9 +17,10 @@ def main():
     while possible_list != []:
         prime = possible_list[0]
         prime_list.append(prime)
-        for i in possible_list:
-            if i % prime == 0:
-                possible_list.remove(i)
+        possible_list = filter(lambda x: x % prime != 0, possible_list)
+        # for i in possible_list:
+        #     if i % prime == 0:
+        #         possible_list.remove(i)
     print prime_list
     
 
