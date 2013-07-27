@@ -19,7 +19,7 @@ def main():
             prime = possible_set.pop()
             temp_set.add(prime)
         except:
-            prime_set = prime_set | temp_set
+            prime_set = sorted(prime_set | temp_set)
             print prime_set
             print len(prime_set)
             return
