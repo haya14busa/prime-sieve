@@ -5,27 +5,31 @@
 import time
 
 
-
 def sqrt(num):
     sq = num ** .5
-    return num
+    return sq
 
 def main():
     maxn = 10000
-    prime_list = []
-    possible_list = range(2,sqrt(maxn))
-    while possible_list != []:
-        prime = possible_list[0]
-        prime_list.append(prime)
-        possible_list = filter(lambda x: x % prime != 0, possible_list)
-        # for i in possible_list:
-        #     if i % prime == 0:
-        #         possible_list.remove(i)
-    print prime_list
-    
+    prime_set = set(xrange(2,maxn+1))
+    temp_set = set()
+    possible_set = set(xrange(2,int(sqrt(maxn+1))))
+    while 1:
+        try:
+            prime = possible_set.pop()
+            temp_set.add(prime)
+        except:
+            prime_set = prime_set | temp_set
+            print prime_set
+            print len(prime_set)
+            return
+        prime_set = set(ifilter(lambda x: x % prime, prime_set))
+        possible_set = set(ifilter(lambda x: x % prime, possible_set))
+
 
 if __name__ == '__main__':
     time1 = time.clock()
+    from itertools import ifilter
     main()
     time2 = time.clock()
     time = time2 - time1
