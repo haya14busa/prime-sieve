@@ -1,3 +1,6 @@
+# Compare my script's and this script's performance.
+# http://d.hatena.ne.jp/r_ikeda/20111028/prime
+
 import time
 def prime3():
     counter = 0
