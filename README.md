@@ -1,6 +1,6 @@
 # Enumerating Primes
 
-## Discription
+## Description
 - This Python script enumerating primes upto 10000 or command line arguments you type.
 - Display the number of prime within MAX numbers too.
 
