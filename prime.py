@@ -2,21 +2,26 @@
 
 
 def prime(n):
-    x = 1
-    k = 1
+    candidate = 1  # candidate of prime
+    count = 1      # the number of prime
     primelist = [2]
-    while k < n:
-        x += 2
-        a = 0
-        for m in primelist:
-            b = x
-            while m < b:
-                b -= m
-            if b == m:
-                a = 1
-        if a == 0:
-            primelist.append(x)
-            k += 1
+    while count < n:
+        candidate += 2
+        flag = 0   # 0->prime, 1->not prime
+        for prime in primelist:
+            remainder = candidate
+            while prime < remainder:
+                remainder -= prime
+            if remainder == prime:
+                flag = 1
+        if flag == 0:
+            primelist.append(candidate)
+            count += 1
     return primelist
 
-print(prime(100))
+
+def main():
+    print(prime(100)[-1])
+
+if __name__ == '__main__':
+    main()
