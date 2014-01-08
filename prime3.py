@@ -2,6 +2,8 @@
 # http://d.hatena.ne.jp/r_ikeda/20111028/prime
 
 import time
+
+
 def prime3():
     counter = 0
     primes = [2, 3]

@@ -14,14 +14,16 @@ else:
     except:
         MAX = 10000
 
+
 def sqrt(num):
     sq = num ** .5
     return sq
 
+
 def main():
-    prime_set = set(xrange(2,MAX+1))
-    possible_set = set(xrange(2,int(sqrt(MAX+1))))
-    temp_set = set() # append prime upto sqrt(MAX)
+    prime_set = set(xrange(2, MAX+1))
+    possible_set = set(xrange(2, int(sqrt(MAX+1))))
+    temp_set = set()  # append prime upto sqrt(MAX)
     while 1:
         try:
             prime = sorted(possible_set).pop(0)
